@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Employee</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+
+    <string name="dashboard">Dashboard</string>
+    <string name="AboutUs">About Us</string>
+    <string name="atr07">Atr07</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+    <string name="about_fragment">About Fragment</string>
+
+</resources>
