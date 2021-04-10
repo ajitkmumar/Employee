@@ -10,7 +10,6 @@ import com.employee.repositry.ApiReposiotry
 import kotlinx.coroutines.launch
 
 class DashBoardViewModel(private val apiReposiotry: ApiReposiotry) : ViewModel() {
-    var progressDialog: SingleLiveEvent<Boolean> = SingleLiveEvent<Boolean>()
     val apiResponse: MutableLiveData<DashBoardModel> = MutableLiveData()
 
     fun getEmployees() = viewModelScope.launch {

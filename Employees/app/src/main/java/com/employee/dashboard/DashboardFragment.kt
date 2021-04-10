@@ -37,9 +37,7 @@ class DashboardFragment : BaseFragment(), ClickListener {
 
     fun initBlock(){
 
-        viewmodel?.progressDialog?.observe(this, Observer {
-            if (it!!) customeProgressDialog?.show() else customeProgressDialog?.dismiss()
-        })
+
 
         viewmodel.getEmployees()
 
