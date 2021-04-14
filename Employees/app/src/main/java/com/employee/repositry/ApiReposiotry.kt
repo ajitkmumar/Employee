@@ -6,9 +6,11 @@ import com.employee.network.RetrofitBuilder
 import com.employee.network.SafeApiRequest
 
 class ApiReposiotry: SafeApiRequest(){
-    suspend fun getEmployees(): DashBoardModel{
-        return apiRequest{ RetrofitBuilder.api.getEmployees() }
-    }
+
+
+    suspend fun getEmployees() = RetrofitBuilder.api.getEmployees();
+
+
 
 
 }

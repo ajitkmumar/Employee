@@ -17,7 +17,7 @@ object RetrofitBuilder {
                 .addInterceptor(interceptor)
                 .build()
         Retrofit.Builder()
-                .baseUrl("http://dummy.restapiexample.com/api/")
+                .baseUrl("https://api-staging.heatseekr.app/v1.1/poi/autocomplete/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

@@ -1,6 +1,8 @@
 package com.employee.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,14 +10,22 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.employee.R
 import com.employee.dashboard.DashBoardModel
+import org.json.JSONObject
 
-class CategoryAdapter(val context: Context, val dashBoardModel: DashBoardModel) :
+
+class CategoryAdapter(val context: Context, val dashBoardModel: List<DashBoardModel>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.txtTitle?.text = "Employee Name : " + dashBoardModel.data?.get(position)?.employeeName
-        holder?.tvSalary?.text = "Employee Salary : " + dashBoardModel.data?.get(position)?.employeeSalary
-        holder?.tvAge?.text = "Employee Age : " + dashBoardModel.data?.get(position)?.employeeAge
+
+        val jresponse = JSONObject(dashBoardModel[position].getQuery())
+        val getPoiId = jresponse.getString("poiId")
+        val type = jresponse.getString("type")
+
+        holder?.txtTitle?.text = "$getPoiId"
+        holder?.tvSalary?.text = "$type"
+
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -27,10 +37,11 @@ class CategoryAdapter(val context: Context, val dashBoardModel: DashBoardModel) 
         val txtTitle = itemView.findViewById<TextView>(R.id.tvName)
         val tvSalary = itemView.findViewById<TextView>(R.id.tvSalary)
         val tvAge = itemView.findViewById<TextView>(R.id.tvAge)
+
     }
 
     override fun getItemCount(): Int {
-        return dashBoardModel.data?.size!!
+        return dashBoardModel?.size!!
     }
 
     override fun getItemId(position: Int): Long {

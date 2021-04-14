@@ -4,38 +4,15 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class DashBoardModel {
-    @SerializedName("status")
+    @SerializedName("query")
     @Expose
-     val status: String? = null
+    private var query: String? = null
 
-    @SerializedName("data")
-    @Expose
-     val data: List<Datum>? = null
+    fun getQuery(): String? {
+        return query
+    }
 
-    @SerializedName("message")
-    @Expose
-     val message: String? = null
-
-
-    class Datum {
-        @SerializedName("id")
-        @Expose
-        var id: Int? = null
-
-        @SerializedName("employee_name")
-        @Expose
-        var employeeName: String? = null
-
-        @SerializedName("employee_salary")
-        @Expose
-        var employeeSalary: Int? = null
-
-        @SerializedName("employee_age")
-        @Expose
-        var employeeAge: Int? = null
-
-        @SerializedName("profile_image")
-        @Expose
-        var profileImage: String? = null
+    fun setQuery(query: String?) {
+        this.query = query
     }
 }

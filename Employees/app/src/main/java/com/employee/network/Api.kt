@@ -4,9 +4,12 @@ import com.employee.dashboard.DashBoardModel
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
 
 interface Api {
-    @GET("v1/employees")
-    suspend fun getEmployees(): Response<DashBoardModel>
+    @Headers("Authorization: Basic aXZhOlNsMTFkMzEw","X-HEATSEEKR-TOKEN: eyJhbGciOiJSUzI1NiIsImtpZCI6IjFkZTgwNjdhODI5OGE0ZTMzNDRiNGRiZGVkMjVmMmZiNGY0MGYzY2UiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9oZWF0c2Vla3ItZGV2IiwiYXVkIjoiaGVhdHNlZWtyLWRldiIsImF1dGhfdGltZSI6MTYxODMwNzMxMywidXNlcl9pZCI6IjhqUHVNMTBKZ3BNWWZwVFlSTDJmc0JLTXRPTjIiLCJzdWIiOiI4alB1TTEwSmdwTVlmcFRZUkwyZnNCS010T04yIiwiaWF0IjoxNjE4MzgyNDA5LCJleHAiOjE2MTgzODYwMDksImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnt9LCJzaWduX2luX3Byb3ZpZGVyIjoiYW5vbnltb3VzIn19.Q4YOAH5pbeTivD9e6GYCLTsQLq8iy_FBsVHO-O8ueBffChQ8PxjLp8ORyjNh4EFFvgXbTyHDSBWuTk39h3x4O-LT7LQu4IzgKGXTmRFm7IwtFOA0ILOqWH5b3eQhO1DEuihTw3CfnA3y4TiwHVH5erlXp-odqJjXXPt29iZBupX1a0iDfFNZWmWnnseNTU2E6m-j2RBWMgV2QnQKE4YjCwT9GUzwYClAZ-U0EdLSby2A82bRi_rtxB6vYPeAeFSpfbrjtYzOvQmYRysSXg_Skcq4UoBWQaVzN7BZPtGazKC5UHeO0WfgNEYM5RaYXISpLCuhQ5LSVDoNYJoHDSKS7w")
+    @GET("history")
+    suspend fun getEmployees(): List<DashBoardModel>
 }
 

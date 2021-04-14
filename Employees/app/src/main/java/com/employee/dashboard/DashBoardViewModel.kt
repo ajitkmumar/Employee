@@ -10,7 +10,7 @@ import com.employee.repositry.ApiReposiotry
 import kotlinx.coroutines.launch
 
 class DashBoardViewModel(private val apiReposiotry: ApiReposiotry) : ViewModel() {
-    val apiResponse: MutableLiveData<DashBoardModel> = MutableLiveData()
+    val apiResponse: MutableLiveData<List<DashBoardModel>> = MutableLiveData()
 
     fun getEmployees() = viewModelScope.launch {
         try {
